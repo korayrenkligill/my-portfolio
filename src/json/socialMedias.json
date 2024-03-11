@@ -1,0 +1,17 @@
+[
+  {
+    "socialMediaName": "instagram",
+    "order": "1",
+    "link": "#"
+  },
+  {
+    "socialMediaName": "linkedin",
+    "order": "2",
+    "link": "#"
+  },
+  {
+    "socialMediaName": "github",
+    "order": "3",
+    "link": "#"
+  }
+]
