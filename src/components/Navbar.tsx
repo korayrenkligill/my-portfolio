@@ -5,6 +5,24 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import navigations from "@/json/navigations.json";
 import { useCallback, useState } from "react";
 import Image from "next/image";
+import { FaHome, FaInfo } from "react-icons/fa";
+import { IoIosCube, IoMdContact } from "react-icons/io";
+import { IoChatbox } from "react-icons/io5";
+
+const GetIcon = (iconName: string) => {
+  switch (iconName) {
+    case "home":
+      return <FaHome />;
+    case "projects":
+      return <IoIosCube />;
+    case "blogs":
+      return <IoChatbox />;
+    case "about me":
+      return <FaInfo />;
+    case "contact":
+      return <IoMdContact />;
+  }
+};
 
 const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -56,15 +74,18 @@ const Navbar = () => {
             toggle
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
-          } flex md:opacity-100 md:pointer-events-auto text-sm absolute z-50 top-full left-0 w-full border-b md:relative md:items-center md:justify-center md:border-0 bg-white transition-opacity`}
+          } flex md:opacity-100 md:pointer-events-auto text-sm absolute pb-4 md:pb-0 z-50 top-full left-0 w-full border-b md:relative md:items-center md:justify-center md:border-0 bg-white transition-opacity`}
         >
           <ul className="flex flex-col w-full md:flex-row md:justify-center">
             {navigations.map((navigation, key) => (
               <li key={key}>
                 <a
-                  className="inline-block w-full px-3 py-2 md:py-1 text-gray-600 hover:text-purple-500 transition-colors duration-200 capitalize whitespace-nowrap"
+                  className="flex items-center gap-2 w-full px-3 pl-6 py-4 md:pl-3 md:py-1 text-gray-600 hover:text-purple-500 transition-colors duration-200 capitalize whitespace-nowrap"
                   href={navigation.link}
                 >
+                  <span className="text-lg md:hidden">
+                    {GetIcon(navigation.text)}
+                  </span>
                   {navigation.text}
                 </a>
               </li>

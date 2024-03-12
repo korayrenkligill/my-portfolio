@@ -19,7 +19,7 @@ const SocialMediaIcon = (socialMedia: string) => {
 
 const Header = () => {
   return (
-    <div className="border-b bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50 relative">
+    <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50 relative">
       <div className="container mx-auto py-32 flex flex-col items-center gap-6">
         <h1 className="flex flex-col items-center">
           <span className="text-sm md:text-xl md:leading-5">Hi</span>
@@ -32,7 +32,7 @@ const Header = () => {
         </h1>
         <Button type="outlined-rounded">Let&apos;s Talk</Button>
       </div>
-      <div className="p-2 gap-4 inline-flex flex-col absolute right-0 bottom-0">
+      <div className="p-2 gap-4 inline-flex flex-col absolute right-0 top-0">
         {socialMedias.map((socialMedia, key) => (
           <a
             key={key}

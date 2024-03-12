@@ -1,0 +1,44 @@
+{
+  "skills": [
+    {
+      "image": "/images/icons/html-icon.png",
+      "description": "HTML"
+    },
+    {
+      "image": "/images/icons/css-icon.png",
+      "description": "CSS"
+    },
+    {
+      "image": "/images/icons/js-icon.png",
+      "description": "JavaScript"
+    },
+    {
+      "image": "/images/icons/react-icon.png",
+      "description": "ReactJS"
+    },
+    {
+      "image": "/images/icons/nextjs-icon.png",
+      "description": "NextJS"
+    }
+  ],
+  "socialMedias": [
+    {
+      "image": "/images/icons/github-icon.png",
+      "description": "Github"
+    },
+    {
+      "image": "/images/icons/linkedin-icon.png",
+      "description": "LinkedIn"
+    },
+    {
+      "image": "/images/icons/instagram-icon.png",
+      "description": "Instagram"
+    }
+  ],
+  "contact": [
+    {
+      "image": "/images/icons/gmail-icon.png",
+      "description": "Gmail"
+    }
+  ]
+}
