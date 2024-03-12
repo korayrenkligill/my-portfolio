@@ -25,12 +25,12 @@ const AboutMe = () => {
         <h1 className="text-2xl md:text-4xl md:leading-normal font-bold bg-gradient-to-r from-pink-600 via-purple-500 to-indigo-400 inline-block text-transparent bg-clip-text">
           About Me
         </h1>
-        <p className="text-sm mb-4">
+        <p className="text-xs sm:text-sm mb-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
           sed nemo architecto mollitia obcaecati consectetur provident quisquam.
           Voluptas, porro reprehenderit!
         </p>
-        <button className="flex items-center gap-2 py-2 px-4 rounded-full text-white text-sm bg-purple-500">
+        <button className="flex items-center gap-2 py-2 px-4 rounded-full text-white text-xs sm:text-sm bg-purple-500">
           <LuDownload /> Download CV
         </button>
       </div>
