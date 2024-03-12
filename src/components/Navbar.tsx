@@ -4,6 +4,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import navigations from "@/json/navigations.json";
 import { useCallback, useState } from "react";
+import Image from "next/image";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -21,10 +22,14 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2 flex-1">
           <span>
-            <img
+            <Image
               src="/images/profile.jpg"
               alt="profile"
               className="w-8 h-8 object-cover rounded-full"
+              width={20}
+              height={20}
+              priority
+              quality={50}
             />
           </span>
           <span className="text-sm">

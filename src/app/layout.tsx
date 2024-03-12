@@ -17,7 +17,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Portfolio: Koray RENKLİGİL</title>
+        <meta
+          name="description"
+          content="My name is Koray, I am a front-end developer. I am passionate about web design and user experience, producing creative and original solutions. I develop modern and impressive websites using technologies such as React and Next. I focus on improving users' experiences by creating eye-catching designs and user-friendly interfaces in my projects. I would be happy to collaborate and contribute to new projects. You can contact me and get more information by reviewing my portfolio."
+        />
+      </head>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <Navbar />
         <main className="flex-grow">{children}</main>
         <footer className="py-4">Footer</footer>
