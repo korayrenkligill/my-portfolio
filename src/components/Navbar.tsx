@@ -36,7 +36,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="p-4 border-b select-none sticky top-0 z-50 bg-white">
+    <nav className="p-4 border-b select-none sticky top-0 z-50 bg-white bg-opacity-100 md:bg-opacity-80 backdrop-blur-sm ">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2 flex-1">
           <span>
@@ -74,7 +74,7 @@ const Navbar = () => {
             toggle
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
-          } flex md:opacity-100 md:pointer-events-auto text-sm absolute pb-4 md:pb-0 z-50 top-full left-0 w-full border-b md:relative md:items-center md:justify-center md:border-0 bg-white transition-opacity`}
+          } flex md:opacity-100 md:pointer-events-auto text-sm absolute pb-4 md:pb-0 z-50 top-full left-0 w-full border-b md:relative md:items-center md:justify-center md:border-0 bg-white md:bg-opacity-0 transition-opacity`}
         >
           <ul className="flex flex-col w-full md:flex-row md:justify-center">
             {navigations.map((navigation, key) => (
