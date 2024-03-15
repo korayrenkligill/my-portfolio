@@ -1,8 +1,9 @@
 import React from "react";
 import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { MdBlock } from "react-icons/md";
-import Button from "../Buttons/Button";
+import LinkComp from "../Link/Link";
 import socialMedias from "@/json/socialMedias.json";
+import Link from "next/link";
 
 const SocialMediaIcon = (socialMedia: string) => {
   switch (socialMedia) {
@@ -30,16 +31,19 @@ const Header = () => {
             FRONT-END DEVELOPER
           </span>
         </h1>
-        <Button type="outlined-rounded">Let&apos;s Talk</Button>
+        <LinkComp href="/contact" type="outlined-rounded">
+          Let&apos;s Talk
+        </LinkComp>
       </div>
       <div className="p-2 gap-4 inline-flex flex-col absolute right-0 top-0">
         {socialMedias.map((socialMedia, key) => (
-          <a
+          <Link
             key={key}
+            href={socialMedia.link}
             className={`order-${socialMedia.order} p-2 text-sm rounded-full border border-gray-400 text-gray-500 transition-colors duration-500 cursor-pointer hover:border-gray-600 hover:text-gray-700`}
           >
             {SocialMediaIcon(socialMedia.socialMediaName)}
-          </a>
+          </Link>
         ))}
       </div>
     </div>

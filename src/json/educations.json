@@ -1,0 +1,25 @@
+[
+  {
+    "schoolName": "Manisa High School",
+    "country": "Turkey",
+    "city": "Manisa",
+    "startYear": "2017",
+    "endYear": "2021"
+  },
+  {
+    "schoolName": "Iskenderun Technical University",
+    "department": "Computer Engineering",
+    "country": "Turkey",
+    "city": "Hatay",
+    "startYear": "2021",
+    "endYear": "2023"
+  },
+  {
+    "schoolName": "Dumlupınar University",
+    "department": "Computer Engineering",
+    "country": "Turkey",
+    "city": "Kütahya",
+    "startYear": "2021",
+    "endYear": "now"
+  }
+]

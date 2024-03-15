@@ -15,7 +15,9 @@ export default function Home() {
       <Services />
       <LastestProjectsContainer />
       <LastestBlogsContainer />
-      <ContactForm />
+      <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50 relative">
+        <ContactForm />
+      </div>
     </>
   );
 }

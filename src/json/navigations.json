@@ -13,10 +13,6 @@
   },
   {
     "text": "about me",
-    "link": "#"
-  },
-  {
-    "text": "contact",
-    "link": "#"
+    "link": "/about-me"
   }
 ]

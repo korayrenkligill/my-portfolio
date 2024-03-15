@@ -23,7 +23,7 @@ const AboutMe = () => {
           about me
         </h2>
         <h1 className="text-2xl md:text-4xl md:leading-normal font-bold bg-gradient-to-r from-pink-600 via-purple-500 to-indigo-400 inline-block text-transparent bg-clip-text">
-          Who I Am
+          Who Am I
         </h1>
         <p className="text-xs sm:text-sm mb-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores

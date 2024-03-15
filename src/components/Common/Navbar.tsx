@@ -8,6 +8,8 @@ import Image from "next/image";
 import { FaHome, FaInfo } from "react-icons/fa";
 import { IoIosCube, IoMdContact } from "react-icons/io";
 import { IoChatbox } from "react-icons/io5";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const GetIcon = (iconName: string) => {
   switch (iconName) {
@@ -25,6 +27,8 @@ const GetIcon = (iconName: string) => {
 };
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   const [toggle, setToggle] = useState<boolean>(false);
 
   const handleToggleChange = useCallback(() => {
@@ -59,9 +63,12 @@ const Navbar = () => {
           </span>
         </div>
         <div className="flex items-center justify-end gap-4 md:order-2 flex-1">
-          <button className="text-sm font-semibold text-purple-500 hover:text-purple-700 transition-colors duration-200">
+          <Link
+            href="/contact"
+            className="text-sm font-semibold text-purple-500 hover:text-purple-700 transition-colors duration-200"
+          >
             Hire Me
-          </button>
+          </Link>
           <button
             onClick={handleToggleChange}
             className="inline-block md:hidden px-1"
@@ -79,15 +86,17 @@ const Navbar = () => {
           <ul className="flex flex-col w-full md:flex-row md:justify-center">
             {navigations.map((navigation, key) => (
               <li key={key}>
-                <a
-                  className="flex items-center gap-2 w-full px-3 pl-6 py-4 md:pl-3 md:py-1 text-gray-600 hover:text-purple-500 transition-colors duration-200 capitalize whitespace-nowrap"
+                <Link
+                  className={`${
+                    pathname == navigation.link && "text-purple-500"
+                  } flex items-center gap-2 w-full px-3 pl-6 py-4 md:pl-3 md:py-1 text-gray-600 hover:text-purple-500 transition-colors duration-200 capitalize whitespace-nowrap`}
                   href={navigation.link}
                 >
                   <span className="text-lg md:hidden">
                     {GetIcon(navigation.text)}
                   </span>
                   {navigation.text}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
