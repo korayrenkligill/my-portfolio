@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import ProjectItem from "./ProjectItem";
-import projects from "@/json/projects.json";
+import BlogItem from "./BlogItem";
+import blogs from "@/json/blogs.json";
 
-const LastestProjectsContainer = () => {
+const LastestBlogsContainer = () => {
   const [activeTab, setActiveTab] = useState(0);
   return (
     <div className="p-2">
@@ -45,9 +45,9 @@ const LastestProjectsContainer = () => {
             <span>Test</span>
           </li>
         </ul>
-        <div className="border-2 rounded-b-lg p-4 shadow-md border-gray-50 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-          {projects.map((item, key) => (
-            <ProjectItem item={item} key={key} />
+        <div className="border-2 rounded-b-lg p-4 shadow-md border-gray-50 flex flex-col gap-4">
+          {blogs.map((item, key) => (
+            <BlogItem item={item} key={key} />
           ))}
         </div>
       </div>
@@ -55,4 +55,4 @@ const LastestProjectsContainer = () => {
   );
 };
 
-export default LastestProjectsContainer;
+export default LastestBlogsContainer;
