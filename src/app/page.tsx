@@ -1,4 +1,5 @@
 import AboutMe from "@/components/AboutMe";
+import ContactForm from "@/components/ContactForm";
 import Header from "@/components/Header";
 import LastestBlogsContainer from "@/components/LastestBlogsContainer";
 import LastestProjectsContainer from "@/components/LastestProjectsContainer";
@@ -14,6 +15,7 @@ export default function Home() {
       <Services />
       <LastestProjectsContainer />
       <LastestBlogsContainer />
+      <ContactForm />
     </>
   );
 }
