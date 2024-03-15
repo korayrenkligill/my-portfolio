@@ -1,10 +1,10 @@
-import AboutMe from "@/components/AboutMe";
-import ContactForm from "@/components/ContactForm";
-import Header from "@/components/Header";
-import LastestBlogsContainer from "@/components/LastestBlogsContainer";
-import LastestProjectsContainer from "@/components/LastestProjectsContainer";
-import Services from "@/components/Services";
-import ShortInformations from "@/components/ShortInformations";
+import AboutMe from "@/components/Main/AboutMe";
+import ContactForm from "@/components/Common/ContactForm";
+import Header from "@/components/Common/Header";
+import LastestBlogsContainer from "@/components/Main/LastestBlogsContainer";
+import LastestProjectsContainer from "@/components/Main/LastestProjectsContainer";
+import Services from "@/components/Main/Services";
+import ShortInformations from "@/components/Main/ShortInformations";
 
 export default function Home() {
   return (

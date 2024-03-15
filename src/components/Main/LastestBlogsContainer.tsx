@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import BlogItem from "./BlogItem";
+import BlogItem from "@/components/Common/BlogItem";
 import blogs from "@/json/blogs.json";
 
 const LastestBlogsContainer = () => {

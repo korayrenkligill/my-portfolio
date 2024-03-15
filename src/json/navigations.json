@@ -1,11 +1,11 @@
 [
   {
     "text": "home",
-    "link": "#"
+    "link": "/"
   },
   {
     "text": "projects",
-    "link": "#"
+    "link": "/projects"
   },
   {
     "text": "blogs",

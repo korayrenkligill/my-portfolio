@@ -1,7 +1,7 @@
 import React from "react";
 import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { MdBlock } from "react-icons/md";
-import Button from "./Buttons/Button";
+import Button from "../Buttons/Button";
 import socialMedias from "@/json/socialMedias.json";
 
 const SocialMediaIcon = (socialMedia: string) => {
