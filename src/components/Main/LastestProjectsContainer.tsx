@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ProjectItem from "@/components/Common/ProjectItem";
+import ProjectItem from "@/components/Projects/ProjectItem";
 import projects from "@/json/projects.json";
 
 const LastestProjectsContainer = () => {

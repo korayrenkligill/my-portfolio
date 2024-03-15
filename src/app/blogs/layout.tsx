@@ -1,0 +1,21 @@
+import Sidebar from "@/components/Blogs/Sidebar";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects: Koray RENKLİGİL",
+};
+
+export default function ProjectsLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <section
+      className={`container mx-auto p-4 flex flex-col md:flex-row h-full`}
+    >
+      <Sidebar />
+      <main className="flex-grow px-2">{children}</main>
+    </section>
+  );
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import projects from "@/json/projects.json";
-import ProjectItem from "@/components/Common/ProjectItem";
+import ProjectItem from "@/components/Projects/ProjectItem";
 
 const page = () => {
   return (
