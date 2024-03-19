@@ -7,10 +7,10 @@ const page = () => {
   const router = useRouter();
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
-      // router.push("login");
+      router.push("login");
       console.log("giriş yapılmamış");
     }
-  }, []);
+  }, [router]);
   return (
     <div className="">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum perferendis
