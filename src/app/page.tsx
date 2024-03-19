@@ -6,30 +6,19 @@ import LastestBlogsContainer from "@/components/Main/LastestBlogsContainer";
 import LastestProjectsContainer from "@/components/Main/LastestProjectsContainer";
 import Services from "@/components/Main/Services";
 import ShortInformations from "@/components/Main/ShortInformations";
-// import { useEffect, useState } from "react";
-// import axios from "axios";
+import { useEffect } from "react";
 
 export default function Home() {
-  // const [username, setUsername] = useState("korayrenkligil");
-  // const [email, setEmail] = useState("koray.renkligill@gmail.com");
-  // const [password, setPassword] = useState("h1597534545");
-
-  // useEffect(() => {
-  //   console.log("test");
-  //   (async () => {
-  //     console.log("test1");
-  //     try {
-  //       console.log("test2");
-  //       const newUser = { username, email, password };
-  //       await axios.post("http://localhost:8080/api/users", newUser);
-  //       console.log("Yeni kullanıcı başarıyla oluşturuldu:", newUser);
-  //     } catch (error) {
-  //       console.log("error test");
-  //       console.error("Kullanıcı oluşturulurken bir hata oluştu:", error);
-  //     }
-  //   })();
-  //   console.log("error test4");
-  // }, []);
+  useEffect(() => {
+    const date = new Date();
+    const now = Number(date.getTime());
+    const expireDate = Number(localStorage.getItem("accessTokenexpireDate"));
+    if (expireDate < now) {
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
+      localStorage.removeItem("accessTokenexpireDate");
+    }
+  }, []);
   return (
     <>
       <Header />

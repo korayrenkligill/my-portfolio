@@ -11,7 +11,9 @@ export default function ProjectsLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section className={`container mx-auto p-4 flex flex-col md:flex-row`}>
+    <section
+      className={`container mx-auto p-4 flex flex-col md:flex-row flex-1`}
+    >
       <Sidebar />
       <main className="flex-grow px-2">{children}</main>
     </section>

@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import auth from "@/Api/Auth/Auth";
-import axios from "axios";
-import { error } from "console";
+import { useRouter } from "next/navigation";
 import React, { useCallback, useState } from "react";
 
 const page = () => {
+  const router = useRouter();
+
   const [user, setUser] = useState<LoginType>({
     emailOrUsername: "",
     password: "",
@@ -32,7 +33,14 @@ const page = () => {
           rememberMe: user.rememberMe,
         })
         .then((resp) => {
-          console.log("");
+          const date = new Date();
+          localStorage.setItem("accessToken", resp.accessToken);
+          localStorage.setItem("refreshToken", resp.refreshToken);
+          localStorage.setItem(
+            "accessTokenexpireDate",
+            (Number(date.getTime()) + resp.expiresIn).toString()
+          );
+          router.push("/");
         })
         .catch((error) => {
           console.log(error);
@@ -41,7 +49,7 @@ const page = () => {
     [user]
   );
   return (
-    <div className="bg-gradient-to-r h-full  from-indigo-50 via-purple-50 to-indigo-50">
+    <div className="bg-gradient-to-r flex-1 from-indigo-50 via-purple-50 to-indigo-50">
       <div
         className="container mx-auto h-full flex items-center justify-center"
         style={{
