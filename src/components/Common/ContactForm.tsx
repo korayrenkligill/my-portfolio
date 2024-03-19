@@ -50,7 +50,7 @@ const ContactForm = () => {
           <textarea
             rows={3}
             className="p-2 rounded-md resize-y text-sm border-0 outline-0"
-            placeholder="emily.johnson@example.com.."
+            placeholder="Message.."
           ></textarea>
         </div>
         <button className="flex items-center justify-center gap-1 text-sm md:text-base bg-black text-white p-2 rounded-md hover:text-purple-400 transition-colors duration-300">

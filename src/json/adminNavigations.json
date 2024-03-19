@@ -1,0 +1,98 @@
+[
+  {
+    "title": "Management",
+    "items": [
+      {
+        "text": "Dashboard",
+        "link": "dashboard"
+      }
+    ]
+  },
+  {
+    "title": "Manipulation",
+    "items": [
+      {
+        "text": "Project",
+        "childs": [
+          {
+            "text": "Projects",
+            "link": "projects"
+          },
+          {
+            "text": "Add Project",
+            "link": "add-project"
+          },
+          {
+            "text": "Remove Project",
+            "link": "remove-project"
+          }
+        ]
+      },
+      {
+        "text": "Blog",
+        "childs": [
+          {
+            "text": "Blogs",
+            "link": "blogs"
+          },
+          {
+            "text": "Add Blog",
+            "link": "add-blog"
+          },
+          {
+            "text": "Remove Blog",
+            "link": "remove-blog"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Contact",
+    "items": [
+      {
+        "text": "Messages",
+        "link": "messages"
+      }
+    ]
+  },
+  {
+    "title": "Settings",
+    "items": [
+      {
+        "text": "Language",
+        "childs": [
+          {
+            "text": "Languages",
+            "link": "languages"
+          },
+          {
+            "text": "Add Language",
+            "link": "add-project"
+          },
+          {
+            "text": "Remove Language",
+            "link": "remove-project"
+          }
+        ]
+      },
+      {
+        "text": "Translation",
+        "childs": [
+          {
+            "text": "Translations",
+            "link": "translations"
+          },
+          {
+            "text": "Add Translation",
+            "link": "add-translation"
+          },
+          {
+            "text": "Remove Translation",
+            "link": "remove-translation"
+          }
+        ]
+      }
+    ]
+  }
+]
