@@ -4,15 +4,11 @@ import { IoShareSocialSharp } from "react-icons/io5";
 
 type BlogItemProps = {
   item: BlogItem;
-  key?: number;
 };
 
-const BlogItem = ({ item, key }: BlogItemProps) => {
+const BlogItem = ({ item }: BlogItemProps) => {
   return (
-    <div
-      key={key}
-      className="p-4 flex flex-col items-stretch group cursor-pointer rounded-md shadow-md border border-gray-100 shadow-gray-100 hover:shadow-gray-200 group transition-shadow duration-300"
-    >
+    <div className="p-4 flex flex-col items-stretch group cursor-pointer rounded-md shadow-md border border-gray-100 shadow-gray-100 hover:shadow-gray-200 group transition-shadow duration-300">
       <div className="flex justify-between items-center gap-4 md:gap-12 mb-1">
         <h1 className="line-clamp-1 font-semibold text-gray-600 group-hover:text-purple-500">
           {item.title}

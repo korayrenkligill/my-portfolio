@@ -9,11 +9,13 @@ const MyEducations = () => {
       <div className="hidden md:flex items-center justify-between">
         {educations.map((item, key) => {
           return (
-            <>
-              <div
-                key={key}
-                className="w-3 h-3 hover:scale-110 transition-transform bg-purple-300 border-2 border-white outline outline-purple-500 rounded-full relative group"
-              >
+            <div
+              key={key}
+              className={`${
+                key != educations.length - 1 && "flex-grow"
+              } flex items-center`}
+            >
+              <div className="w-3 h-3 hover:scale-110 transition-transform bg-purple-300 border-2 border-white outline outline-purple-500 rounded-full relative group">
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 pb-2">
                   <div className="flex flex-col bg-white shadow rounded-md p-3">
                     <div className="flex justify-between items-center text-xs text-gray-400">
@@ -40,7 +42,7 @@ const MyEducations = () => {
               {key != educations.length - 1 && (
                 <div className="flex-grow border-t-2 border-dashed border-purple-200"></div>
               )}
-            </>
+            </div>
           );
         })}
       </div>

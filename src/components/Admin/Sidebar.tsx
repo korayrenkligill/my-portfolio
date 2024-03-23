@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiBars2 } from "react-icons/hi2";
 import { IoCloseOutline } from "react-icons/io5";
 import Link from "next/link";
 import sidebarLinks from "@/json/adminNavigations.json";
+import { usePathname } from "next/navigation";
 
 type SidebarPackageProps = {
   item: SidebarPackageType;
@@ -19,11 +20,13 @@ type SidebarSubItemProps = {
 };
 
 const SidebarSubItem = ({ item }: SidebarSubItemProps) => {
+  const pathname = usePathname();
+
   return (
     <li>
       <a
         href={item.link}
-        className="block p-2 pl-4 rounded-md text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+        className={`block p-2 pl-4 rounded-md text-sm hover:bg-gray-100 transition-colors ${pathname === item.link ? 'text-purple-700' : 'text-gray-600'}`}
       >
         {item.text}
       </a>
@@ -31,15 +34,20 @@ const SidebarSubItem = ({ item }: SidebarSubItemProps) => {
   );
 };
 
-const SidebarItem = ({ item }: SidebarItemProps) => {
-  const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
+const SidebarItem: React.FC<SidebarItemProps> = ({ item }) => {
+  const pathname = usePathname();
+
+  const toggleDropdown = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    const dropdown = event.currentTarget.nextElementSibling as HTMLElement;
+    dropdown.classList.toggle('hidden');
+  };
 
   if (!item.childs) {
     return (
       <li>
         <Link
           href={item.link ?? "#"}
-          className="block p-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+          className={`block p-2 rounded-md text-sm hover:bg-gray-100 transition-colors ${pathname === item.link ? 'text-purple-700' : 'text-gray-600'}`}
         >
           {item.text}
         </Link>
@@ -47,24 +55,16 @@ const SidebarItem = ({ item }: SidebarItemProps) => {
     );
   } else {
     return (
-      <li className="">
+      <li>
         <a
-          className={`flex items-center justify-between p-2 rounded-md text-sm ${
-            dropdownIsOpen
-              ? "text-purple-700 hover:bg-transparent"
-              : "text-gray-700 hover:bg-gray-100"
-          } transition-colors cursor-pointer`}
-          onClick={() => setDropdownIsOpen(!dropdownIsOpen)}
+          className={`flex items-center justify-between p-2 rounded-md text-sm text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer`}
+          onClick={toggleDropdown}
         >
           {item.text}
           <IoIosArrowDown />
         </a>
         <ul
-          className={`${
-            dropdownIsOpen
-              ? "h-auto translate-y-0 opacity-100"
-              : "h-0 translate-y-3 opacity-0"
-          } flex-col overflow-hidden duration-300`}
+          className={`hidden flex-col overflow-hidden duration-300`}
         >
           {item.childs.map((item, key) => (
             <SidebarSubItem item={item} key={key} />
@@ -88,41 +88,34 @@ const SidebarPackage = ({ item }: SidebarPackageProps) => {
   );
 };
 
-const Sidebar = () => {
-  const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
+const Sidebar: React.FC = () => {
+  const sidebarRef = useRef<HTMLDivElement>(null);
+
+  const toggleSidebar = () => {
+    const sidebar = sidebarRef.current;
+    if (sidebar) {
+      sidebar.classList.toggle("-translate-x-72");
+      console.log(sidebarRef.current.classList.contains("transition-transform"))
+    }
+  };
 
   return (
-    <div className="relative">
+    <div className="relative py-4">
       <aside
-        className={`${
-          sidebarIsOpen ? "translate-x-0" : "-translate-x-72 md:-translate-x-0"
-        } min-w-60 px-2 bg-white absolute z-20 left-0 top-0 md:relative h-full transition-transform`}
+        ref={sidebarRef}
+        className="min-w-60 px-2 bg-white absolute z-20 left-0 top-0 md:relative h-full transition-transform md:-translate-x-0 -translate-x-72"
       >
         {sidebarLinks.map((item, key) => (
           <SidebarPackage item={item} key={key} />
         ))}
       </aside>
       <button
-        className="md:hidden fixed z-20 bottom-8 left-4 p-3 shadow-md rounded-full text-sm bg-white"
-        onClick={() => {
-          setSidebarIsOpen(!sidebarIsOpen);
-        }}
+        className="md:hidden fixed z-20 bottom-8 left-4 p-3 shadow-md rounded-full text-base bg-black text-white"
+        onClick={toggleSidebar}
       >
-        <HiBars2
-          className={`
-            ${
-              sidebarIsOpen ? "opacity-0 h-0 scale-0" : "opacity-100 scale-100"
-            } transition-opacity duration-300`}
-        />
-        <IoCloseOutline
-          className={`
-            ${
-              sidebarIsOpen ? "opacity-100 scale-100" : "opacity-0 h-0 scale-0"
-            } transition-opacity duration-300`}
-        />
+        <HiBars2/>
       </button>
     </div>
   );
 };
-
 export default Sidebar;

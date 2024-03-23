@@ -43,10 +43,10 @@ const page = () => {
           router.push("/");
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error.message);
         });
     },
-    [user]
+    [user, router]
   );
   return (
     <div className="bg-gradient-to-r flex-1 from-indigo-50 via-purple-50 to-indigo-50">

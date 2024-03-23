@@ -4,7 +4,7 @@
     "items": [
       {
         "text": "Dashboard",
-        "link": "dashboard"
+        "link": "/admin"
       }
     ]
   },
@@ -16,15 +16,15 @@
         "childs": [
           {
             "text": "Projects",
-            "link": "projects"
+            "link": "/admin/projects"
           },
           {
             "text": "Add Project",
-            "link": "add-project"
+            "link": "/admin/add-project"
           },
           {
             "text": "Remove Project",
-            "link": "remove-project"
+            "link": "/admin/remove-project"
           }
         ]
       },
@@ -33,15 +33,15 @@
         "childs": [
           {
             "text": "Blogs",
-            "link": "blogs"
+            "link": "/admin/blogs"
           },
           {
             "text": "Add Blog",
-            "link": "add-blog"
+            "link": "/admin/add-blog"
           },
           {
             "text": "Remove Blog",
-            "link": "remove-blog"
+            "link": "/admin/remove-blog"
           }
         ]
       }
@@ -52,7 +52,7 @@
     "items": [
       {
         "text": "Messages",
-        "link": "messages"
+        "link": "/admin/messages"
       }
     ]
   },
@@ -64,15 +64,15 @@
         "childs": [
           {
             "text": "Languages",
-            "link": "languages"
+            "link": "/admin/languages"
           },
           {
             "text": "Add Language",
-            "link": "add-project"
+            "link": "/admin/add-language"
           },
           {
             "text": "Remove Language",
-            "link": "remove-project"
+            "link": "/admin/remove-language"
           }
         ]
       },
@@ -81,15 +81,15 @@
         "childs": [
           {
             "text": "Translations",
-            "link": "translations"
+            "link": "/admin/translations"
           },
           {
             "text": "Add Translation",
-            "link": "add-translation"
+            "link": "/admin/add-translation"
           },
           {
             "text": "Remove Translation",
-            "link": "remove-translation"
+            "link": "/admin/remove-translation"
           }
         ]
       }

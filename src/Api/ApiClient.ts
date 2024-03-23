@@ -27,37 +27,45 @@ export class APIClient {
     };
 
     // Options auth control
-    if (authRequired) {
+    if (authRequired)
       if (!costomHeaders)
         defaultHeaders["Authorization"] = `Bearer {accessToken}`;
       else costomHeaders["Authorization"] = `Bearer {accessToken}`;
-    }
 
     // If custom header has been created, add custom header
     if (costomHeaders) requestOptions.headers = costomHeaders;
     else requestOptions.headers = defaultHeaders;
 
     // If there are params, add them to the config object
-    if (params != null) {
-      requestOptions.params = params;
-    }
+    if (params != null) requestOptions.params = params;
 
     // If there are body, add them to the config object
-    if (body != null) {
-      requestOptions.data = body;
-    }
+    if (body != null) requestOptions.data = body;
 
     try {
       // Make the request with Axios
       const response = await axios(requestOptions);
-      console.log(response.data);
-      return response.data as T;
-    } catch (error) {
-      const _error = error as any;
-      if (_error.response.data) {
-        throw _error.response.data.message;
+
+      // Check for successful response status
+      if (response.statusText === "OK") {
+        return response.data as T;
       } else {
-        throw new Error(`Error: ${error}`);
+        throw new Error(`Server Error: ${response.status}`);
+      }
+    } catch (error) {
+      // Handle the error message
+      const _error = error as any;
+
+      if (_error.response) {
+        // Server responded but an error occurred
+        if (_error.response.data) {
+          throw _error.response.data;
+        } else {
+          throw new Error(`Server Error: ${_error.response.status}`);
+        }
+      } else {
+        // Error message for cases like connection failure
+        throw new Error(`Connection Error: ${_error.message}`);
       }
     }
   }
@@ -66,13 +74,11 @@ export class APIClient {
     path,
     authRequired = false,
     params = null,
-    body = null,
     costomHeaders = null,
   }: {
     path: string;
     authRequired?: boolean;
     params?: any;
-    body?: any;
     costomHeaders?: any;
   }): Promise<T> {
     return await this.request<T>(
@@ -80,7 +86,7 @@ export class APIClient {
       path,
       authRequired,
       params,
-      body,
+      null,
       costomHeaders
     );
   }

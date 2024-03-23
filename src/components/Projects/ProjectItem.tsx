@@ -5,15 +5,11 @@ import { FaEye } from "react-icons/fa";
 
 type ProjectItemProps = {
   item: ProjectItem;
-  key?: number;
 };
 
-const ProjectItem = ({ item, key }: ProjectItemProps) => {
+const ProjectItem = ({ item }: ProjectItemProps) => {
   return (
-    <div
-      key={key}
-      className="flex flex-col items-stretch group cursor-pointer rounded-md shadow-lg shadow-gray-100 "
-    >
+    <div className="flex flex-col items-stretch group cursor-pointer rounded-md shadow-lg shadow-gray-100 ">
       <div className="relative overflow-hidden">
         <img
           src={item.image}
